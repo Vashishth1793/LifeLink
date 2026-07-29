@@ -1,156 +1,241 @@
+// =========================================
+// SELECT FORM ELEMENTS
+// =========================================
+
+const bloodRequestForm = document.getElementById("bloodRequestForm");
+
+const patientName = document.getElementById("patientName");
+const bloodGroup = document.getElementById("bloodGroup");
+const units = document.getElementById("units");
+const hospitalName = document.getElementById("hospitalName");
+const city = document.getElementById("city");
+const contactNumber = document.getElementById("contactNumber");
+const urgency = document.getElementById("urgency");
+const requiredDate = document.getElementById("requiredDate");
+const message = document.getElementById("message");
+
+const successMessage = document.getElementById("successMessage");
+
+
+
+// =========================================
+// SET MINIMUM DATE
+// =========================================
+
+const today = new Date().toISOString().split("T")[0];
+requiredDate.min = today;
+
+// =========================================
+// INPUT STYLING
+// =========================================
+
+function markInvalid(input) {
+    input.classList.add("input-error");
+}
+
+function markValid(input) {
+    input.classList.remove("input-error");
+}
 // =====================================
 // Helper Functions
 // =====================================
 
 // Show an error message
-function showError(errorElement, message) {
+function showError(input, errorElement, message) {
+
+    markInvalid(input);
+
     errorElement.textContent = message;
 }
 
 // Clear an existing error message
-function clearError(errorElement) {
+function clearError(input, errorElement) {
+
+    markValid(input);
+
     errorElement.textContent = "";
 }
 
+// Validate required fields
+function validateRequiredField(input, errorElement, message) {
+
+    clearError(input, errorElement);
+
+    if (input.value.trim() === "") {
+
+        showError(input, errorElement, message);
+
+        return false;
+    }
+
+    return true;
+}
+patientName.addEventListener("input", () => {
+
+    if (patientName.value.trim() !== "") {
+        clearError(
+            patientName,
+            document.getElementById("patientNameError")
+        );
+    }
+
+});
+
+
+
+
 
 // =====================================
-// Get the blood request form
+// Listen for Form Submission
 // =====================================
-
-const form = document.getElementById("bloodRequestForm");
-
-
-// =====================================
-// Listen for form submission
-// =====================================
-
-form.addEventListener("submit", function (event) {
-
+bloodRequestForm.addEventListener("submit", function (event) {
     // Prevent page refresh
     event.preventDefault();
+    successMessage.textContent = "";
 
 
     // =====================================
     // Patient Name
     // =====================================
+const patientNameError = document.getElementById("patientNameError");
 
-    const patientName =
-        document.getElementById("patientName").value.trim();
-
-    const patientNameError =
-        document.getElementById("patientNameError");
-
-    clearError(patientNameError);
-
-    if (patientName === "") {
-        showError(patientNameError, "Patient name is required.");
-        return;
-    }
+if (
+    !validateRequiredField(
+        patientName,
+        patientNameError,
+        "Patient name is required."
+    )
+) {
+    patientName.focus();
+    return;
+}
 
 
     // =====================================
     // Blood Group
     // =====================================
 
-    const bloodGroup =
-        document.getElementById("bloodGroup").value;
+    const bloodGroupError = document.getElementById("bloodGroupError");
 
-
-    // =====================================
-    // Units Required
-    // =====================================
-
-    const units =
-        document.getElementById("units").value;
-
+if (
+    !validateRequiredField(
+        bloodGroup,
+        bloodGroupError,
+        "Please select a blood group."
+    )
+) {
+    bloodGroup.focus();
+    return;
+}
 
     // =====================================
     // Hospital Name
     // =====================================
 
-    const hospitalName =
-        document.getElementById("hospitalName").value.trim();
+ const hospitalNameError = document.getElementById("hospitalNameError");
+
+  if (
+    !validateRequiredField(
+        hospitalName,
+        hospitalNameError,
+        "Hospital name is required."
+    )
+) {
+    hospitalName.focus();
+    return;
+}
 
 
     // =====================================
     // City
     // =====================================
+const cityError = document.getElementById("cityError");
 
-    const city =
-        document.getElementById("city").value.trim();
+if (
+    !validateRequiredField(
+        city,
+        cityError,
+        "City is required."
+    )
+) {
+    city.focus();
+    return;
+}
 
 
     // =====================================
     // Contact Number
     // =====================================
 
-    const contactNumber =
-        document.getElementById("contactNumber").value.trim();
+    const contactNumberError = document.getElementById("contactNumberError");
+if (
+    !validateRequiredField(
+        contactNumber,
+        contactNumberError,
+        "Contact number is required."
+    )
+) {
+    contactNumber.focus();
+    return;
+}
 
     const mobileRegex = /^[6-9]\d{9}$/;
 
-    if (!mobileRegex.test(contactNumber)) {
-        alert("Please enter a valid Indian mobile number.");
+   if (!mobileRegex.test(contactNumber.value.trim())) {
+     showError(
+    contactNumber,
+    contactNumberError,
+    "Please enter a valid 10-digit Indian mobile number."
+);
         return;
     }
 
 
-    // =====================================
-    // Urgency
-    // =====================================
-
-    const urgency =
-        document.getElementById("urgency").value;
-
-
-    // =====================================
-    // Required Date
-    // =====================================
-
-    const requiredDate =
-        document.getElementById("requiredDate").value;
-
-
-    // =====================================
-    // Additional Information
-    // =====================================
-
-    const message =
-        document.getElementById("message").value.trim();
+  
 
 
     // =====================================
     // Create Blood Request Object
     // =====================================
+const bloodRequest = {
 
-    const bloodRequest = {
+    patientName: patientName.value.trim(),
 
-        patientName,
+    bloodGroup: bloodGroup.value,
 
-        bloodGroup,
+    units: Number(units.value),
 
-        units: Number(units),
+    hospitalName: hospitalName.value.trim(),
 
-        hospitalName,
+    city: city.value.trim(),
 
-        city,
+    contactNumber: contactNumber.value.trim(),
 
-        contactNumber,
+    urgency: urgency.value,
 
-        urgency,
+    requiredDate: requiredDate.value,
 
-        requiredDate,
+    message: message.value.trim()
 
-        message
+};
 
-    };
+// =====================================
+// Display Data
+// =====================================
 
+console.log("Blood Request Data:");
+console.log(bloodRequest);
 
-    // =====================================
-    // Display Data
-    // =====================================
+// =====================================
+// Show Success Message
+// =====================================
 
-    console.log("Blood Request Data:");
-    console.log(bloodRequest);
+successMessage.textContent = "Blood request submitted successfully!";
+
+// =====================================
+// Reset Form
+// =====================================
+
+bloodRequestForm.reset();
 
 });
