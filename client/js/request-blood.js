@@ -225,7 +225,28 @@ const bloodRequest = {
 
 console.log("Blood Request Data:");
 console.log(bloodRequest);
+ 
+fetch("http://localhost:5000/api/blood-requests", {
+    method: "POST",
 
+    headers: {
+        "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify(bloodRequest)
+
+})
+.then(function(response) {
+
+    return response.json();
+
+})
+.then(function(data) {
+
+    console.log("Server Response:");
+    console.log(data);
+
+});
 // =====================================
 // Show Success Message
 // =====================================
