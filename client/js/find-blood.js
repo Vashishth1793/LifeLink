@@ -5,10 +5,11 @@ async function fetchBloodRequests() {
     try {
 
         const response = await fetch(API_URL);
+const data = await response.json();
 
-        const data = await response.json();
+const bloodRequests = data.requests;
 
-        console.log(data);
+console.log(bloodRequests);
 
     } catch (error) {
 
