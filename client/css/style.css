@@ -830,3 +830,149 @@ body {
     margin: 0;
     font-size: 14px;
 }
+/* =========================================
+   20. FIND BLOOD PAGE
+========================================= */
+
+.find-blood-section {
+    min-height: 800px;
+    padding: 80px 8%;
+    background-color: #fff8f8;
+}
+
+.find-blood-header {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.find-blood-header p:first-child {
+    color: #d32f2f;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.find-blood-header h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.find-blood-header p:last-child {
+    color: #666666;
+    font-size: 16px;
+}
+
+.blood-requests-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.blood-request-card {
+    padding: 28px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+    transition: 0.3s;
+}
+
+.blood-request-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+    border-color: #ffd4d4;
+}
+
+.blood-request-card h2 {
+    color: #d32f2f;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.blood-request-card p {
+    color: #555555;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+.blood-group-badge {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 60px;
+    height: 60px;
+
+    margin-bottom: 20px;
+
+    background-color: #fff0f0;
+    color: #d32f2f;
+
+    border: 2px solid #d32f2f;
+    border-radius: 50%;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.urgency-badge {
+    display: inline-block;
+
+    margin-top: 10px;
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.urgency-badge.normal {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.urgency-badge.urgent {
+    background-color: #fff3e0;
+    color: #ef6c00;
+}
+
+.urgency-badge.emergency {
+    background-color: #ffebee;
+    color: #c62828;
+}
+.no-requests {
+    grid-column: 1 / -1;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background-color: #ffffff;
+
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+}
+
+.no-requests h2 {
+    margin-bottom: 10px;
+
+    color: #333333;
+}
+
+.no-requests p {
+    color: #666666;
+}
