@@ -18,4 +18,3 @@ The LifeLink project currently includes:
 - Dynamic Find Blood page
 - Blood request cards
 - Blood group and urgency indicators
-- API loading and error handling
