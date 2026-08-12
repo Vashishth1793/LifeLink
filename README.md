@@ -31,3 +31,9 @@ The LifeLink project currently includes:
 . html
 - i have learn so many things  by working on this project i'll continu it as it is going
 - i some time i feel very lassy but still work on it even i do atleast 15 min but ill do  
+
+
+-//date 12/08/26
+-hello i am vashishth i'm working on my project which name life link which is blood donation web may be one day it will be a app
+-i started the project very exitedly in least 2 week i work on it very exsitedly but nop because  of my lassyness im not taking it seriously 
+-but i promis my self that i'll try to re start the project from tomorow only for 30 min but ill do it for sereously  
