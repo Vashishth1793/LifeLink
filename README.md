@@ -37,3 +37,9 @@ The LifeLink project currently includes:
 -hello i am vashishth i'm working on my project which name life link which is blood donation web may be one day it will be a app
 -i started the project very exitedly in least 2 week i work on it very exsitedly but nop because  of my lassyness im not taking it seriously 
 -but i promis my self that i'll try to re start the project from tomorow only for 30 min but ill do it for sereously  
+
+
+-//hi it's 13/08/26
+- i have not done any progress in this tody i think im not in my control why i dont know
+- whenever i think to re start the wokr i dont know why i stop by my selfe 
+- now from tomoro ill try again to restart all
