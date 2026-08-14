@@ -43,3 +43,8 @@ The LifeLink project currently includes:
 - i have not done any progress in this tody i think im not in my control why i dont know
 - whenever i think to re start the wokr i dont know why i stop by my selfe 
 - now from tomoro ill try again to restart all
+
+-// hi its 14/08/2026
+- today i work on my self i think ill restart all the stuf from today itself 
+-i know im littel nit lasy n but i know if i want i can get any think i want 
+- its vashishth sharma login again to its prime dsayes now in net 3 months my goal is to get intership 
