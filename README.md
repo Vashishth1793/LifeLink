@@ -9,6 +9,10 @@
 
 The LifeLink project currently includes:
 
+
+
+- Backend connected to MongoDB Atlas using Mongoose.
+- Blood Request API integration is in progress.
 - Blood request form with client-side validation
 - Express.js backend
 - MongoDB Atlas integration
