@@ -23,5 +23,13 @@ The LifeLink project currently includes:
 - Blood request cards
 - Blood group and urgency indicators
 - API loading and error handling  
-
+- Express.js backend
+- MongoDB Atlas integration
+- Mongoose BloodRequest model
+- Create blood request API
+- Fetch blood requests API
+- Dynamic Find Blood page
+- Blood request cards
+- Blood group and urgency indicators
+- API loading and error handling 
 
