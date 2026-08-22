@@ -33,7 +33,3 @@ The LifeLink project currently includes:
 - Blood group and urgency indicators
 - API loading and error handling 
 
-## Current Progress
-
-- Backend connected to MongoDB Atlas using Mongoose.
-- Blood Request API integration is in progress.++.
